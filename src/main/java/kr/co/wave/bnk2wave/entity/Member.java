@@ -72,7 +72,4 @@ public class Member {
     @Column(name = "MEMBER_STATUS", nullable = false, length = 10)
     private String memberStatus;
 
-    @Column(name = "MEMBER_TYPE", nullable = false, length = 10)
-    private String memberType;
-
 }
