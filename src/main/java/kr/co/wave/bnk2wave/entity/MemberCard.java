@@ -37,15 +37,23 @@ public class MemberCard {
     @Column(name = "CARD_STATUS", nullable = false, length = 10)
     private String cardStatus;
 
-    @Column(name = "PAYMENT_DAY", nullable = false)
+    // 계좌 등록 전이거나 체크카드일 경우 null일 수 있으므로 nullable 제거
+    @Column(name = "PAYMENT_DAY")
     private Integer paymentDay;
 
-    @Column(name = "PAYMENT_BANK", nullable = false, length = 10)
+    // 계좌 등록 전일 경우 null일 수 있으므로 nullable 제거
+    @Column(name = "PAYMENT_BANK", length = 10)
     private String paymentBank;
 
-    @Column(name = "PAYMENT_ACCOUNT", nullable = false, length = 20)
+    // 계좌 등록 전일 경우 null일 수 있으므로 nullable 제거
+    @Column(name = "PAYMENT_ACCOUNT", length = 20)
     private String paymentAccount;
 
     @Column(name = "OWNER_TYPE", nullable = false, length = 20)
     private String ownerType;
+
+    public void updatePaymentAccount(String paymentBank, String paymentAccount) {
+        this.paymentBank = paymentBank;
+        this.paymentAccount = paymentAccount;
+    }
 }
