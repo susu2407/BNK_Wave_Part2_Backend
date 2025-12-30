@@ -58,7 +58,7 @@ public class CardService {
     // 카드번호 끝 4자리만 남기는 간단한 메서드
     private String maskCardNumber(String fullNumber) {
         if (fullNumber != null && fullNumber.length() >= 4) {
-            return "****" + fullNumber.substring(fullNumber.length() - 4);
+            return fullNumber.substring(fullNumber.length() - 4);
         }
         return "****";
     }
