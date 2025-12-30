@@ -4,7 +4,7 @@ spring:
 
     jpa:
       hibernate:
-        ddl-auto: update # 테이블 구조 자동 생성/수정 (개발 단계용)
+        ddl-auto: none # 테이블 구조 자동 생성/수정 (개발 단계용)
       show-sql: true     # 실행되는 SQL을 콘솔에 출력
       properties:
         hibernate:
@@ -15,7 +15,7 @@ spring:
       import: "optional:file:.env[.properties]"
 
     datasource:
-      url: ${DB_URL}
-      username: ${DB_ID}  # DB 계정명
-      password: ${DB_PASSWORD}  # DB 비밀번호
-      driver-class-name: oracle.jdbc.OracleDriver
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      password: 1234
+      url: jdbc:oracle:thin:@//localhost:1521/XE
+      username: hanto
