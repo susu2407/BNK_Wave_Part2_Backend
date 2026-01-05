@@ -32,7 +32,10 @@ public class CardService {
                 .orElseThrow(() -> new RuntimeException("카드 상세 정보를 찾을 수 없습니다."));
 
         // 3. 이번 달 1일 00:00부터 현재까지의 결제 금액 합산 계산
-        LocalDateTime startOfMonth = LocalDateTime.now().withDayOfMonth(1).withHour(0).withMinute(0).withSecond(0);
+        // 시작일: 2025년 12월 1일 00:00:00
+        LocalDateTime startOfMonth = LocalDateTime.of(2025, 12, 1, 0, 0, 0);
+
+        // 종료일: 2026년 1월 31일 23:59:59 (넉넉하게 오늘 이후까지 잡아도 무방합니다)
         LocalDateTime now = LocalDateTime.now();
 
         Long totalAmount = cardHistoryRepository.sumAmountByMonth(
