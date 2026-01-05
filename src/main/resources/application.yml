@@ -19,3 +19,6 @@ spring:
       username: ${DB_ID}  # DB 계정명
       password: ${DB_PASSWORD}  # DB 비밀번호
       driver-class-name: oracle.jdbc.OracleDriver
+
+    jwt:
+      secret: bnk-wave-secret-key-1234
